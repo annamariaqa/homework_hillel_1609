@@ -60,13 +60,13 @@ a) 8019 : 8     d) 7248 : 6
 b) 9907 : 9     e) 7128 : 5
 c) 2789 : 5     f) 19224 : 9
 """
-a = 8019 % 8
-b = 9907 % 9
-c = 2789 % 5
-d = 7248 % 6
-e = 7128 % 5
-f = 19224 % 9
-print(f'Остача з ділення a = {a}, b = {b}, c = {c}, d = {d}, e = {e}, f = {f}')
+value_a = 8019 % 8
+value_b = 9907 % 9
+value_c = 2789 % 5
+value_d = 7248 % 6
+value_e = 7128 % 5
+value_f = 19224 % 9
+print(f'Остача з ділення a = {value_a}, b = {value_b}, c = {value_c}, d = {value_d}, e = {value_e}, f = {value_f}')
 
 # task 08
 """
