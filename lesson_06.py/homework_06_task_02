@@ -1,0 +1,9 @@
+result_1 = -1 
+result_2 = -1 
+
+while result_1 <= -1 and result_2 <= -1:
+    user_input = input("Type in the string with letter 'H' or 'h': ")
+    result_2 = user_input.find('H')
+    result_1 = user_input.find('h') 
+    result_1 >= 0 and result_2 >= 0
+
