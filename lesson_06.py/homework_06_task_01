@@ -1,0 +1,13 @@
+symbols = input("Input smth: ")
+letters = []
+
+for letter in symbols:
+    letters.append(letter)
+
+my_set = set(letters)
+
+my_set_len = len(my_set)
+if my_set_len >= 10:
+    print(True)
+else:
+    print(False)
