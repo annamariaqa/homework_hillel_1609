@@ -1,12 +1,12 @@
-symbols = input("Input smth: ")
-letters = []
+user_input = input("Input here: ")
+symbols = []
 
-for letter in symbols:
-    letters.append(letter)
+for symbol in user_input:
+    symbols.append(symbol)
 
-my_set = set(letters)
+symbols_set = set(symbols)
 
-my_set_len = len(my_set)
+my_set_len = len(symbols_set)
 if my_set_len >= 10:
     print(True)
 else:
