@@ -1,0 +1,13 @@
+user_input = input("Input here: ")
+symbols = []
+
+for symbol in user_input:
+    symbols.append(symbol)
+
+symbols_set = set(symbols)
+
+my_set_len = len(symbols_set)
+if my_set_len >= 10:
+    print(True)
+else:
+    print(False)
