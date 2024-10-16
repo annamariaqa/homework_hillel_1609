@@ -46,17 +46,12 @@ average_number()
 # task 4
 """  Написати функцію, яка приймає рядок та повертає його у зворотному порядку.
 """
-#сортування за спаданям - метод sorted()
-# numbers = [5, 2, 8, 1, 3]
-# sorted_numbers_reverse = sorted(numbers, reverse=True)
-# print("Відсортований у зворотньому порядку список:", sorted_numbers_reverse)
-def reverse_num_list():
-    numbers_list = [x for x in range(10)]
-    print(numbers_list)
-    sorted_numbers_reverse = sorted(numbers_list, reverse=True)
-    print(f"Reversed list: {sorted_numbers_reverse}")
+def reverse_str_list(str):
+    reverse_str = str[::-1]
+    return reverse_str
 
-reverse_num_list() 
+return_value = reverse_str_list(str='Hello how are you')
+print(f'return_value is {return_value}')
 
 # task 5
 """  Написати функцію, яка приймає список слів та повертає найдовше слово у списку.
