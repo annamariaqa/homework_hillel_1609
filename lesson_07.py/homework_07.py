@@ -48,7 +48,7 @@ average_number()
 """
 def reverse_str_list(str):
     reverse_str = str[::-1]
-    print(f"Reversed string: {reverse_str}")
+    return reverse_str
 
 return_value = reverse_str_list(str='Hello how are you')
 print(f'return_value is {return_value}')
