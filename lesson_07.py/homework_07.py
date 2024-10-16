@@ -46,11 +46,12 @@ average_number()
 # task 4
 """  Написати функцію, яка приймає рядок та повертає його у зворотному порядку.
 """
-def reverse_num_list(str):
+def reverse_str_list(str):
     reverse_str = str[::-1]
     print(f"Reversed string: {reverse_str}")
 
-reverse_num_list(str='Hello how are you') 
+return_value = reverse_str_list(str='Hello how are you')
+print(f'return_value is {return_value}')
 
 # task 5
 """  Написати функцію, яка приймає список слів та повертає найдовше слово у списку.
