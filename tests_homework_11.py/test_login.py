@@ -1,19 +1,25 @@
-
+import pytest
 import logging
+import logging.config
+
+logging.config.fileConfig('logging_config.ini')
 
 logger = logging.getLogger(__name__)
 
 logger.setLevel(logging.INFO)
 
 def log_event(username: str, status: str):
+    pass
+    
+@pytest.mark.parametrize('username, status', [('Denn', 'success'), ('Alex', 'expired'), ('Ivan', 'unknown')])
+def test_logging(username, status):
+    log_event(username, status)
+    
+    logger = logging.getLogger("log_event")
+    if logger.hasHandlers():
+        logger.handlers.clear()
 
     log_message = f"Login event - Username: {username}, Status: {status}"
-
-    logging.basicConfig(
-        filename='login_system.log',
-        level=logging.INFO,
-        format='%(asctime)s - %(message)s'
-        )
     
     logger = logging.getLogger("log_event")
     file_handler = logging.FileHandler('login_system.log')
@@ -29,12 +35,11 @@ def log_event(username: str, status: str):
     else:
         logger.error(log_message)
 
-#перевірка файлу на наявність username & status з очікуваним типом даних 
-with open("login_system.log", "r", encoding="utf-8") as file:
-    text = file.read()
-    def check_logger_file(username, status):
-        if  username == str in text:
-            return username
-        if status == str in text:
-            return str 
-        
+    
+
+    with open('login_system.log', 'r') as file_:
+        content = file_.read()
+        rows = content.split('\n')
+        last_row = rows[-2]
+        expected_row = log_message
+        assert expected_row in last_row
