@@ -1,21 +1,21 @@
 import csv
 
 my_set = set()
-with open('random.csv', newline='') as csvfile:
-    reader = csv.reader(csvfile)
-    for row in reader:
-        my_set.update(row)
-print(str(my_set))
 
-with open('result_polovykh.csv', 'w') as f:
-    f.write(str(my_set))
+def open_file(first_file, second_file):
+    with open(first_file, newline='') as csvfile1, open(second_file, newline='') as csvfile2:
+        reader1 = csv.reader(csvfile1)
+        reader2 = csv.reader(csvfile2)
+        for row in reader1:
+            my_set.update(row)
+        for row in reader2:
+            my_set.update(row)
 
-my_set_rmc = set()
-with open('rmc.csv', newline='') as csvfile_rmc:
-    reader = csv.reader(csvfile_rmc)
-    for row in reader:
-        my_set_rmc.update(row)
-print(str(my_set_rmc))
+    return str(my_set)
 
-with open('result_polovykh.csv', 'w') as f:
-    f.write(str(my_set_rmc))
+print(open_file('rmc.csv', 'random.csv'))
+
+with open('result.csv', 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    for item in my_set:
+        writer.writerow([item])
