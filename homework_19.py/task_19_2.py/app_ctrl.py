@@ -13,7 +13,8 @@ class AppCtrl(RestBase):
     
     def image_get(self, filename, url=None, params=None, status_code=200):
         if url is None:
-            url = f'{self.url}/image/{filename}' 
+            url = f'{self.url}/image/{filename}'
+            headers = {'Content-Type': 'text'} 
 
-            return self._execute_request(method='get', url=url, params=params, status_code=status_code)
+            return self._execute_request(method='get', url=url, params=params, headers=headers, status_code=status_code)
             
