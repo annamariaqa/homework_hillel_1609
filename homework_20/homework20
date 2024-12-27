@@ -1,0 +1,53 @@
+CREATE TABLE public.products (
+	id int4 NOT NULL,
+	"name" varchar NOT NULL,
+	description varchar NOT NULL,
+	price varchar NOT NULL,
+	CONSTRAINT products_pk PRIMARY KEY (id)
+);
+
+INSERT INTO public.products
+(id, "name", description, price)
+VALUES(0, 'apples', 'red', '10uah');
+
+INSERT INTO public.products
+(id, "name", description, price)
+VALUES(1, 'mangos', 'yellow', '100uah');
+
+INSERT INTO public.products
+(id, "name", description, price)
+VALUES(2, 'bananas', 'yellow', '70uah');
+
+INSERT INTO public.products
+(id, "name", description, price)
+VALUES(3, 'checken', 'wings', '240uah');
+
+INSERT INTO public.products
+(id, "name", description, price)
+VALUES(4, 'beef', 'steak', '240uah');
+
+CREATE TABLE public.categories (
+    category_id SERIAL PRIMARY KEY,
+    products_id INT REFERENCES products(id),
+	category varchar NOT NULL
+);
+
+INSERT INTO public.categories
+(category_id, products_id, category)
+VALUES(nextval('categories_category_id_seq'::regclass), 0, 'fruits');
+
+INSERT INTO public.categories
+(category_id, products_id, category)
+VALUES(nextval('categories_category_id_seq'::regclass), 2, 'fruits');
+
+INSERT INTO public.categories
+(category_id, products_id, category)
+VALUES(nextval('categories_category_id_seq'::regclass), 3, 'fruits');
+
+INSERT INTO public.categories
+(category_id, products_id, category)
+VALUES(nextval('categories_category_id_seq'::regclass), 3, 'meats');
+
+INSERT INTO public.categories
+(category_id, products_id, category)
+VALUES(nextval('categories_category_id_seq'::regclass), 4, 'meats');
