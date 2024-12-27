@@ -38,11 +38,11 @@ VALUES(nextval('categories_category_id_seq'::regclass), 0, 'fruits');
 
 INSERT INTO public.categories
 (category_id, products_id, category)
-VALUES(nextval('categories_category_id_seq'::regclass), 2, 'fruits');
+VALUES(nextval('categories_category_id_seq'::regclass), 1, 'fruits');
 
 INSERT INTO public.categories
 (category_id, products_id, category)
-VALUES(nextval('categories_category_id_seq'::regclass), 3, 'fruits');
+VALUES(nextval('categories_category_id_seq'::regclass), 2, 'fruits');
 
 INSERT INTO public.categories
 (category_id, products_id, category)
