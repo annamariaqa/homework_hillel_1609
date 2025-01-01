@@ -24,15 +24,14 @@ time.sleep(1)
 
 driver.switch_to.frame(driver.find_element(By.ID, "frame2"))
 
-for _ in range(1):
-    input = driver.find_element(By.ID, "input2")
-    input.send_keys("Frame2_Secret")
-    frame1_button = driver.find_element(By.XPATH, "//button[@onclick=\"verifyInput('input2')\"]")
-    frame1_button.click()
-    alert = Alert(driver)
-    print("Верифікація пройшла успішно!", alert.text)
-    alert.accept()
-    time.sleep(1) 
 
+input = driver.find_element(By.ID, "input2")
+input.send_keys("Frame2_Secret")
+frame1_button = driver.find_element(By.XPATH, "//button[@onclick=\"verifyInput('input2')\"]")
+frame1_button.click()
+alert = Alert(driver)
+if alert.text == "Верифікація пройшла успішно!":
+    print("Успішна верифікація")
+time.sleep(1) 
 
 driver.quit()
